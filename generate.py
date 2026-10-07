@@ -476,8 +476,13 @@ def cover(bg, plan, total, style):
     img = bg.convert("RGBA")
     max_w = W - 2 * M
     if style == "center":
-        img.alpha_composite(Image.new("RGBA", (W, H), config.BG_DARK + (120,)))
-        img.alpha_composite(code_rain(title, 0.3))
+        img.alpha_composite(Image.new("RGBA", (W, H), config.BG_DARK + (150,)))
+        halo = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(halo).rounded_rectangle((40, H // 2 - 330, W - 40, H // 2 + 290), radius=200, fill=200)
+        dark = Image.new("RGBA", (W, H), config.BG_DARK + (0,))
+        dark.putalpha(halo.filter(ImageFilter.GaussianBlur(90)))
+        img.alpha_composite(dark)
+        img.alpha_composite(code_rain(title, 0.25))
         scanlines(img)
         img = img.convert("RGB")
         d = ImageDraw.Draw(img, "RGBA")
@@ -534,7 +539,10 @@ def cover(bg, plan, total, style):
 def s_statement(soft, s, page, total, idx):
     img, d = base(soft, s["heading"])
     max_w = W - 2 * M
-    gradient_text(img, (M - 6, 210), f"{idx:02d}", F("mono", 200))
+    if s.get("_num"):
+        gradient_text(img, (M - 6, 210), f"{s['_num']:02d}", F("mono", 200))
+    else:
+        tracked(d, (M, 420), "> KEY IDEA", F("label", 32), A1, 4)
     h_f, h_l, h_h = fit(d, s["heading"], "head", max_w, 300, 86, 56, 1.05)
     y = text_block(d, h_l, h_f, h_h, M, 500, WHITE)
     accent_bar(img, M, y + 26)
@@ -615,8 +623,9 @@ def s_myth_fact(soft, s, page, total, idx):
     max_w = W - 2 * M - 80
     m_f, m_l, m_h = fit(d, s["myth"], "bodybold", max_w, 230, 46, 36, 1.3)
     f_f, f_l, f_h = fit(d, s["fact"], "bodybold", max_w, 300, 50, 36, 1.3)
-    top = 220
     mh = 120 + len(m_l) * m_h
+    fh_pre = 120 + len(f_l) * f_h
+    top = max(210, (H - (mh + 40 + fh_pre)) // 2)
     panel(d, (M, top, W - M, top + mh), outline_alpha=70, fill=(0, 6, 3, 235))
     tracked(d, (M + 40, top + 34), "MYTH", F("mono", 40), DIM, 6)
     for i, line in enumerate(m_l):
@@ -796,7 +805,11 @@ def render(plan, bg, guest_bg=None):
     soft = bg.filter(ImageFilter.GaussianBlur(36)).convert("RGBA")
     soft.alpha_composite(Image.new("RGBA", (W, H), config.BG_DARK + (215,)))
     locked = (["guest"] if meeting_upcoming() else []) + ["reveal", "qr"]
-    content = plan["slides"][:MAX_SLIDES - 1 - len(locked)]
+    content = [dict(x) for x in plan["slides"][:MAX_SLIDES - 1 - len(locked)]]
+    statements = [x for x in content if x["type"] == "statement"]
+    if len(statements) > 1:
+        for k, x in enumerate(statements, 1):
+            x["_num"] = k
     total = 1 + len(content) + len(locked)
     out = [cover(bg, plan, total, plan.get("cover_style", "art"))]
     for i, s in enumerate(content):
