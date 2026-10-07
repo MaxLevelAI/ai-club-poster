@@ -1,0 +1,50 @@
+{
+  "id": "2026-10-07-2043",
+  "topic": "Chatbot vs. AI agent: what's the difference?",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-07T20:43:14+00:00",
+  "changes": [],
+  "title": "Chatbot vs. AI Agent",
+  "caption": "Curious about how AI works behind the scenes? This post breaks down the difference between chatbots and AI agents\u2014like the one that made this post! \ud83e\udd16\u2728\n\n\ud83d\udcc5 Next meeting: Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove, Windermere, FL\n\ud83c\udfa4 Special guest: A head manager of AI at Disney\n\ud83d\udd17 Register with the link in our bio (or scan the QR code in the slides)\n\n#AgenticAI #ArtificialIntelligence #AIDifference #StudentClub #LearnAI #TechExplained #AIProjects #FutureOfAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "plan": {
+    "title": "Chatbot vs. AI Agent",
+    "subtitle": "Understanding the key differences",
+    "slides": [
+      {
+        "heading": "What is a Chatbot?",
+        "body": "A chatbot answers questions and chats based on set rules or learned data. It waits for you to ask before it responds."
+      },
+      {
+        "heading": "What is an AI Agent?",
+        "body": "An AI agent plans and takes actions on its own to reach goals. It doesn\u2019t just wait\u2014it decides what to do next."
+      },
+      {
+        "heading": "Why Does It Matter?",
+        "body": "Agents can handle complex tasks and adapt over time, while chatbots work best for simple conversations. Both use AI differently."
+      }
+    ],
+    "caption": "Curious about how AI works behind the scenes? This post breaks down the difference between chatbots and AI agents\u2014like the one that made this post! \ud83e\udd16\u2728",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AIDifference",
+      "#StudentClub",
+      "#LearnAI",
+      "#TechExplained",
+      "#AIProjects",
+      "#FutureOfAI"
+    ],
+    "image_prompt": "A bright, modern illustration showing two characters: one is a friendly chatbot icon with a speech bubble, and the other is a robot agent thoughtfully planning by moving chess pieces on a board, set against a digital network background."
+  },
+  "updated": "2026-10-07T20:43:15+00:00"
+}
