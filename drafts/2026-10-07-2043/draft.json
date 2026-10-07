@@ -1,7 +1,7 @@
 {
   "id": "2026-10-07-2043",
   "topic": "Chatbot vs. AI agent: what's the difference?",
-  "status": "waiting",
+  "status": "skipped",
   "version": 1,
   "created": "2026-10-07T20:43:14+00:00",
   "changes": [],
@@ -47,5 +47,6 @@
     "image_prompt": "A bright, modern illustration showing two characters: one is a friendly chatbot icon with a speech bubble, and the other is a robot agent thoughtfully planning by moving chess pieces on a board, set against a digital network background."
   },
   "updated": "2026-10-07T20:43:15+00:00",
-  "issue": 2
+  "issue": 2,
+  "decided": "2026-10-07T21:20:16+00:00"
 }
