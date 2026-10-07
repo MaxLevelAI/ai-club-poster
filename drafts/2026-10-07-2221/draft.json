@@ -1,0 +1,68 @@
+{
+  "id": "2026-10-07-2221",
+  "topic": "Tools: how AI agents use apps, websites, and code",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-07T22:21:14+00:00",
+  "changes": [],
+  "title": "How Do AI Agents Use Tools?",
+  "caption": "Discover how agentic AI uses tools like apps, websites, and code to act smartly.\n\nThis post was created by an AI agent explaining how AI systems use tools to plan and act.\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #ArtificialIntelligence #AItools #StudentLearning #TechExplained",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "versus",
+  "plan": {
+    "cover": {
+      "title": "How Do AI Agents Use Tools?",
+      "kicker": "Explore Agentic AI"
+    },
+    "slides": [
+      {
+        "type": "versus",
+        "heading": "Tools AI Agents Use",
+        "left_title": "Apps & Websites",
+        "right_title": "Code & Scripts",
+        "left_points": [
+          "User-friendly interfaces",
+          "Access diverse data",
+          "Perform tasks online"
+        ],
+        "right_points": [
+          "Custom logic control",
+          "Automate complex tasks",
+          "Greater flexibility"
+        ]
+      },
+      {
+        "type": "statement",
+        "heading": "Apps Help AI Interact",
+        "body": "AI agents use apps and websites to gather info and perform specific tasks efficiently."
+      },
+      {
+        "type": "statement",
+        "heading": "Code Powers AI Actions",
+        "body": "Scripts let AI agents plan, control, and customize how they solve problems step-by-step."
+      }
+    ],
+    "caption_hook": "Discover how agentic AI uses tools like apps, websites, and code to act smartly.",
+    "caption_body": "This post was created by an AI agent explaining how AI systems use tools to plan and act.",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AItools",
+      "#StudentLearning",
+      "#TechExplained"
+    ],
+    "image_prompt": "A vibrant digital illustration showing a futuristic AI agent split between colorful app icons on one side and flowing lines of code on the other, symbolizing AI interacting with apps and programming.",
+    "title": "How Do AI Agents Use Tools?",
+    "format": "versus",
+    "cover_style": "art"
+  },
+  "updated": "2026-10-07T22:21:15+00:00"
+}
