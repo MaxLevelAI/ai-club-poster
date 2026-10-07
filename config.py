@@ -21,23 +21,22 @@ MEETING_DAY = "Tuesday, Oct 13"
 MEETING_TIME = "3:00 - 4:00 PM"
 MEETING_PLACE = "Hawkers"
 MEETING_PLACE_DETAIL = "The Grove, Windermere, FL"
+MEETING_ADDRESS = "9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786"
+MEETING_ADDRESS_SHORT = "9100 Conroy Windermere Rd Ste 110, Windermere"
+MEETING_TICKER = "TUE OCT 13 · 3–4 PM · HAWKERS"  # short version for the bottom of every slide
 
 # Special guest (leave GUEST_LINE empty "" when there's no guest)
 GUEST_LINE = "A head manager of AI at Disney"
 GUEST_HEADING = "AI at Disney"
-GUEST_BODY = ("A head manager of AI at Disney is joining our next meeting. "
-              "Come hear how AI is used behind the magic and bring your questions.")
+GUEST_BODY = "A head manager of AI at Disney is joining our next meeting."
 GUEST_IMAGE_PROMPT = (
     "a generic fairytale castle with tall spires at night, fireworks bursting in the sky, "
     "magical sparkles and stardust, cinematic. Original design, not any real or famous castle"
 )
 
-# Last slide of every post: the "how was this made?" hook.
-AGENT_STORY = (
-    "An AI agent picked this topic, wrote every slide, generated the artwork, "
-    "and published it here. A club member just tapped approve."
-)
-JOIN_INFO = "Want to learn how it works? Register with the link in our bio."
+# The "this post was made by an AI agent" reveal slide (second to last).
+AGENT_APPROVAL_LINE = "A club member reviewed and approved it."
+JOIN_INFO = "Want to learn how? Sign up with the link in our bio."
 
 # --- Theme: Matrix / hacker green on black ---
 ACCENT = "#00FF41"    # matrix green
