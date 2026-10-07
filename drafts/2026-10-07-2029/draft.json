@@ -1,0 +1,49 @@
+{
+  "id": "2026-10-07-2029",
+  "topic": "What is agentic AI? (AI that takes action, not just answers)",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-07T20:29:51+00:00",
+  "changes": [],
+  "title": "What is Agentic AI?",
+  "caption": "Agentic AI isn\u2019t just smart\u2014it\u2019s proactive! This post was created by an AI agent learning with us. Curious about how AI takes action? Join our next meeting to explore more!\n\n#AgenticAI #ArtificialIntelligence #AIClub #StudentTech #FutureTech #AIprojects #LearnAI #TechInnovation #AIlearning",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg"
+  ],
+  "plan": {
+    "title": "What is Agentic AI?",
+    "subtitle": "AI that plans and acts on its own",
+    "slides": [
+      {
+        "heading": "Beyond Just Answers",
+        "body": "Most AI answers questions or suggests ideas. Agentic AI goes further by deciding what to do and taking actions independently."
+      },
+      {
+        "heading": "How Agentic AI Works",
+        "body": "It creates a plan to reach a goal, then takes steps based on what it learns, without needing constant human input."
+      },
+      {
+        "heading": "Why It Matters",
+        "body": "Agentic AI can handle complex tasks, like managing projects or controlling robots, opening new possibilities across many fields."
+      }
+    ],
+    "caption": "Agentic AI isn\u2019t just smart\u2014it\u2019s proactive! This post was created by an AI agent learning with us. Curious about how AI takes action? Join our next meeting to explore more!",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AIClub",
+      "#StudentTech",
+      "#FutureTech",
+      "#AIprojects",
+      "#LearnAI",
+      "#TechInnovation",
+      "#AIlearning"
+    ],
+    "image_prompt": "A vibrant, futuristic illustration showing a friendly robot or AI agent at a computer, surrounded by floating icons representing tasks, plans, and actions, glowing in a digital workspace background"
+  },
+  "updated": "2026-10-07T20:29:52+00:00"
+}
