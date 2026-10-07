@@ -1,0 +1,63 @@
+{
+  "id": "2026-10-07-2114",
+  "topic": "How an AI agent thinks: the plan, act, observe loop",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-07T21:14:35+00:00",
+  "changes": [],
+  "title": "How AI Agents Think: Myth vs Fact",
+  "caption": "Think AI agents just follow orders? Think again\u2014here\u2019s how they really work!\n\nThis post explains the plan-act-observe cycle that powers AI agents. Fun fact: an AI agent helped create this carousel!\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AIClub #ArtificialIntelligence #MachineLearning #AIExplained",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg",
+    "slide8.jpg"
+  ],
+  "format": "myth vs fact",
+  "plan": {
+    "cover": {
+      "title": "How AI Agents Think: Myth vs Fact",
+      "kicker": "Plan, Act, Observe"
+    },
+    "slides": [
+      {
+        "type": "myth_fact",
+        "myth": "AI agents only follow fixed instructions.",
+        "fact": "They plan and decide actions based on goals and observations."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI agents always know exactly what will happen.",
+        "fact": "They learn by observing and updating plans with new info."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI agents act once and stop.",
+        "fact": "They repeat planning, acting, and observing continuously to improve."
+      },
+      {
+        "type": "statement",
+        "heading": "AI Agent Thinking Loop",
+        "body": "Agents plan, act, observe, then repeat to adapt and learn."
+      }
+    ],
+    "caption_hook": "Think AI agents just follow orders? Think again\u2014here\u2019s how they really work!",
+    "caption_body": "This post explains the plan-act-observe cycle that powers AI agents. Fun fact: an AI agent helped create this carousel!",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIClub",
+      "#ArtificialIntelligence",
+      "#MachineLearning",
+      "#AIExplained"
+    ],
+    "image_prompt": "A futuristic, bright illustration showing a glowing brain connected with gears and arrows labeled Plan, Act, Observe forming a loop, symbolizing AI thinking.",
+    "title": "How AI Agents Think: Myth vs Fact",
+    "format": "myth vs fact",
+    "cover_style": "center"
+  },
+  "updated": "2026-10-07T21:14:36+00:00"
+}
