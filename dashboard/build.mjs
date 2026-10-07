@@ -13,6 +13,12 @@ fs.copyFileSync(path.join(root, "dashboard", "index.html"), path.join(out, "inde
 const cfg = fs.readFileSync(path.join(root, "config.py"), "utf8");
 const club = (cfg.match(/^CLUB_NAME\s*=\s*"([^"]*)"/m) || [, "AI Club"])[1];
 const handle = (cfg.match(/^INSTAGRAM_HANDLE\s*=\s*"([^"]*)"/m) || [, ""])[1];
+const get = (k) => (cfg.match(new RegExp("^" + k + '\\s*=\\s*"([^"]*)"', "m")) || [, ""])[1];
+const meeting = {
+  date: get("MEETING_DATE"), day: get("MEETING_DAY"), time: get("MEETING_TIME"),
+  place: get("MEETING_PLACE"), detail: get("MEETING_PLACE_DETAIL"), guest: get("GUEST_LINE"),
+  register: get("REGISTER_URL"),
+};
 
 const draftsDir = path.join(root, "drafts");
 const drafts = [];
@@ -35,5 +41,5 @@ if (fs.existsSync(draftsDir)) {
 }
 drafts.sort((a, b) => (a.created < b.created ? 1 : -1));
 fs.writeFileSync(path.join(out, "data.json"),
-  JSON.stringify({ club, handle, built: new Date().toISOString(), drafts }, null, 1));
+  JSON.stringify({ club, handle, meeting, built: new Date().toISOString(), drafts }, null, 1));
 console.log(`Dashboard built with ${drafts.length} drafts`);

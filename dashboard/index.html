@@ -6,23 +6,23 @@
 <title>AI Club Agent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #070918; --panel: #0e1130; --panel-2: #141842; --line: rgba(255,255,255,.09);
-    --text: #f4f5ff; --soft: #c9cdf0; --dim: #8b90bd;
-    --violet: #8b5cf6; --cyan: #22d3ee; --green: #34d399; --amber: #fbbf24; --red: #f87171;
+    --bg: #000502; --panel: #03130a; --panel-2: #06200f; --line: rgba(0,255,65,.16);
+    --text: #eafff0; --soft: #b8eec8; --dim: #6fa883;
+    --violet: #00ff41; --cyan: #9cffb8; --green: #34d399; --amber: #fbbf24; --red: #f87171;
     --grad: linear-gradient(90deg, var(--violet), var(--cyan));
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: radial-gradient(1200px 600px at 85% -10%, rgba(139,92,246,.22), transparent 60%),
-                radial-gradient(900px 500px at -10% 30%, rgba(34,211,238,.10), transparent 60%), var(--bg);
+    background: radial-gradient(1200px 600px at 85% -10%, rgba(0,255,65,.14), transparent 60%),
+                radial-gradient(900px 500px at -10% 30%, rgba(0,255,65,.06), transparent 60%), var(--bg);
     color: var(--text); font: 16px/1.55 Inter, system-ui, sans-serif; min-height: 100vh;
   }
   h1, h2, h3, .num, .label { font-family: "Space Grotesk", Inter, sans-serif; }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 20px 80px; }
-  .label { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); font-weight: 500; }
+  .label { font-family: "JetBrains Mono", monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); font-weight: 500; }
 
   header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .brand { font-weight: 700; font-size: 18px; letter-spacing: .02em; }
@@ -43,13 +43,20 @@
   .stat .num { font-size: 42px; font-weight: 700; line-height: 1; }
   .stat .cap { color: var(--dim); font-size: 14px; margin-top: 8px; }
 
+  .meet { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; margin: -24px 0 8px;
+          padding: 22px 26px; border: 1px solid var(--violet); border-radius: 16px; background: rgba(0,255,65,.05); }
+  .meet .when { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: clamp(22px, 3vw, 30px); }
+  .meet .where { color: var(--soft); margin-top: 4px; }
+  .meet a { background: var(--violet); color: #001a08; font-weight: 700; text-decoration: none; padding: 12px 20px;
+            border-radius: 10px; white-space: nowrap; font-family: "JetBrains Mono", monospace; }
+  @media (max-width: 640px) { .meet { grid-template-columns: 1fr; } }
   section { margin-top: 64px; }
   section > h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 10px 0 24px; letter-spacing: -.01em; }
 
   .pipeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; counter-reset: step; }
   .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px 20px; }
   .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center;
-                  width: 34px; height: 34px; border-radius: 50%; background: var(--violet); font: 700 15px "Space Grotesk", Inter, sans-serif;
+                  width: 34px; height: 34px; border-radius: 50%; background: var(--violet); font: 700 15px "JetBrains Mono", monospace; color: #001a08;
                   margin-bottom: 14px; }
   .step.human::before { background: var(--amber); color: #111; }
   .step.out::before { background: var(--cyan); color: #04151a; }
@@ -66,7 +73,7 @@
   .viewer img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%;
          border: 0; background: rgba(7,9,24,.7); color: #fff; font-size: 20px; cursor: pointer; backdrop-filter: blur(6px); }
-  .nav:hover { background: rgba(139,92,246,.8); }
+  .nav:hover { background: rgba(0,255,65,.8); }
   .nav.prev { left: 12px; } .nav.next { right: 12px; }
   .pips { position: absolute; bottom: 14px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; }
   .pips i { width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.35); transition: .2s; }
@@ -90,7 +97,7 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; cursor: pointer;
           transition: transform .15s, border-color .15s; text-align: left; color: inherit; font: inherit; padding: 0; }
-  .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: rgba(139,92,246,.6); outline: none; }
+  .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: rgba(0,255,65,.6); outline: none; }
   .card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
   .card .body { padding: 12px 14px 14px; }
   .card .t { font-weight: 600; font-size: 14px; line-height: 1.35; margin-bottom: 8px; }
@@ -127,7 +134,7 @@
   </header>
 
   <div class="hero">
-    <div class="label">Agentic AI · live demo</div>
+    <div class="label">&gt; agentic_ai --live-demo</div>
     <h1>Our Instagram is run by an <span>AI agent.</span></h1>
     <p>Three times a day it picks a topic, writes the slides, generates the artwork, designs the post, and asks a
       club member for approval. When we say yes, it publishes to Instagram by itself. This page updates as it works.</p>
@@ -139,6 +146,8 @@
     <div class="stat"><div class="num" id="sSlides">0</div><div class="cap">slides designed</div></div>
     <div class="stat"><div class="num" id="sChanges">0</div><div class="cap">human change requests</div></div>
   </div>
+
+  <div class="meet" id="meet" hidden></div>
 
   <section>
     <div class="label">How it works</div>
@@ -230,6 +239,14 @@ function render(data) {
   const title = data.club || "AI Club";
   $("brand").textContent = title + (data.handle ? ` · ${data.handle}` : "");
   document.title = `${title} Agent`;
+  const m = data.meeting;
+  if (m && m.date && new Date(m.date + "T23:59:00") >= new Date()) {
+    $("meet").hidden = false;
+    $("meet").innerHTML = `<div><div class="label">&gt; next_meeting</div>
+      <div class="when">${esc(m.day)} · ${esc(m.time)}</div>
+      <div class="where">${esc(m.place)}, ${esc(m.detail)}${m.guest ? ` · Special guest: ${esc(m.guest)}` : ""}</div></div>
+      ${m.register ? `<a href="${esc(m.register)}" target="_blank" rel="noopener">Register →</a>` : ""}`;
+  }
   const posted = data.drafts.filter(d => d.status === "posted");
   countUp($("sPosted"), posted.length);
   countUp($("sDrafts"), data.drafts.length);

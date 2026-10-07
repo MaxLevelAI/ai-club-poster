@@ -18,7 +18,7 @@ def commit_and_push(message):
     """Commit everything under drafts/ and push, retrying if another run pushed first."""
     sh("git", "config", "user.name", "github-actions[bot]")
     sh("git", "config", "user.email", "41898283+github-actions[bot]@users.noreply.github.com")
-    sh("git", "add", "drafts")
+    sh("git", "add", "drafts", "assets")
     if sh("git", "diff", "--cached", "--quiet", check=False).returncode == 0:
         return head_sha()
     sh("git", "commit", "-m", message)

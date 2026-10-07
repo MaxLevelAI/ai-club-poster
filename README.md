@@ -27,7 +27,7 @@ After that it runs by itself. You never upload anything again.
 
 ## Change things
 
-- **Club name, colors, last-slide text:** `config.py`
+- **Next meeting, guest, register link, club name, colors:** `config.py` (meeting slides hide themselves after the meeting date)
 - **Topics:** `topics.txt` (one per line, used in order)
 - **Times:** the `cron` lines in `.github/workflows/draft.yml` (UTC)
 - **One-off topic:** Actions, Make a draft post, Run workflow, type a topic
@@ -46,4 +46,4 @@ After that it runs by itself. You never upload anything again.
 Cost: about $0.15 to $0.25 per post at high image quality, so roughly $15 to $20 a month
 at 3 posts a day. Set `IMAGE_QUALITY` to `medium` in `config.py` to cut that by about 75%.
 
-Fonts: Inter and Space Grotesk, used under the SIL Open Font License (see `fonts/`).
+Fonts: Inter, Space Grotesk and JetBrains Mono, used under the SIL Open Font License (see `fonts/`).
