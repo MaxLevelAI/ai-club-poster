@@ -1,7 +1,7 @@
 {
   "id": "2026-10-07-2029",
   "topic": "What is agentic AI? (AI that takes action, not just answers)",
-  "status": "waiting",
+  "status": "skipped",
   "version": 1,
   "created": "2026-10-07T20:29:51+00:00",
   "changes": [],
@@ -46,5 +46,6 @@
     "image_prompt": "A vibrant, futuristic illustration showing a friendly robot or AI agent at a computer, surrounded by floating icons representing tasks, plans, and actions, glowing in a digital workspace background"
   },
   "updated": "2026-10-07T20:29:52+00:00",
-  "issue": 1
+  "issue": 1,
+  "decided": "2026-10-07T20:58:39+00:00"
 }
