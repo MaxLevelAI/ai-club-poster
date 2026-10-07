@@ -1,7 +1,7 @@
 {
   "id": "2026-10-07-2114",
   "topic": "How an AI agent thinks: the plan, act, observe loop",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-07T21:14:35+00:00",
   "changes": [],
@@ -60,5 +60,7 @@
     "cover_style": "center"
   },
   "updated": "2026-10-07T21:15:41+00:00",
-  "issue": 3
+  "issue": 3,
+  "decided": "2026-10-07T21:22:40+00:00",
+  "permalink": "https://www.instagram.com/p/DeNUHtxmIbd/"
 }
