@@ -2,9 +2,8 @@ name: Make a draft post
 
 on:
   schedule:
-    # Times are in UTC. These are about 9am, 1pm and 6pm Eastern (an hour earlier in winter).
+    # Times are in UTC. These are about 9am and 6pm Eastern (an hour earlier in winter).
     - cron: "7 13 * * *"
-    - cron: "7 17 * * *"
     - cron: "7 22 * * *"
   workflow_dispatch:
     inputs:

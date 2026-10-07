@@ -1,6 +1,6 @@
 # AI Club Instagram Agent
 
-An AI agent that runs the club's Instagram. Three times a day it picks a topic, writes a
+An AI agent that runs the club's Instagram. Twice a day it picks a topic, writes a
 5-slide carousel, generates artwork with OpenAI, designs the slides, and sends them to
 your phone. You reply:
 
@@ -43,7 +43,7 @@ After that it runs by itself. You never upload anything again.
 - **"permission denied" when saving:** Settings, Actions, General, Workflow permissions,
   choose Read and write, Save.
 
-Cost: about $0.15 to $0.25 per post at high image quality, so roughly $15 to $20 a month
-at 3 posts a day. Set `IMAGE_QUALITY` to `medium` in `config.py` to cut that by about 75%.
+Cost: about $0.15 to $0.25 per post at high image quality, so roughly $10 to $15 a month
+at 2 posts a day. Set `IMAGE_QUALITY` to `medium` in `config.py` to cut that by about 75%.
 
 Fonts: Inter, Space Grotesk and JetBrains Mono, used under the SIL Open Font License (see `fonts/`).

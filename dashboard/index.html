@@ -130,13 +130,13 @@
 <div class="wrap">
   <header>
     <div class="brand" id="brand">AI Club</div>
-    <div class="live"><span class="dot"></span><span id="liveText">Agent online · posts 3× a day</span></div>
+    <div class="live"><span class="dot"></span><span id="liveText">Agent online · posts 2× a day</span></div>
   </header>
 
   <div class="hero">
     <div class="label">&gt; agentic_ai --live-demo</div>
     <h1>Our Instagram is run by an <span>AI agent.</span></h1>
-    <p>Three times a day it picks a topic, writes the slides, generates the artwork, designs the post, and asks a
+    <p>Twice a day it picks a topic, writes the slides, generates the artwork, designs the post, and asks a
       club member for approval. When we say yes, it publishes to Instagram by itself. This page updates as it works.</p>
   </div>
 
@@ -253,7 +253,7 @@ function render(data) {
   countUp($("sSlides"), data.drafts.reduce((a, d) => a + d.slides.length, 0));
   countUp($("sChanges"), data.drafts.reduce((a, d) => a + d.changes.length, 0));
   const last = data.drafts[0];
-  $("liveText").textContent = last ? `Agent online · last run ${fmt(last.created)}` : "Agent online · posts 3× a day";
+  $("liveText").textContent = last ? `Agent online · last run ${fmt(last.created)}` : "Agent online · posts 2× a day";
 
   if (!state.current || !data.drafts.find(d => d.id === state.current.id)) {
     if (data.drafts.length) show(posted[0] || data.drafts[0], false);
