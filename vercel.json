@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "echo no install needed",
+  "buildCommand": "node dashboard/build.mjs",
+  "outputDirectory": "site"
+}

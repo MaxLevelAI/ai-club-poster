@@ -1,0 +1,22 @@
+# One topic per line. The bot goes through them in order, then starts over.
+# Add, remove, or reorder lines any time. Lines starting with # are ignored.
+What is agentic AI? (AI that takes action, not just answers)
+Chatbot vs. AI agent: what's the difference?
+How an AI agent thinks: the plan, act, observe loop
+Tools: how AI agents use apps, websites, and code
+Meet the agent that runs this Instagram account
+How an AI agent remembers things
+Why agents need a human in the loop (sometimes)
+Multi-agent systems: when AIs work as a team
+Real AI agents you can try today
+How AI agents browse the web
+Coding agents: AI that writes and fixes software
+What can go wrong when AI agents act on their own
+How to give an AI agent clear instructions
+Agents vs. automation: what makes something "agentic"?
+How an AI agent made this post, step by step
+The future of AI agents at school and work
+Build your first simple AI agent (beginner roadmap)
+How AI agents decide when they're done
+APIs explained: how agents talk to other apps
+Safety rules for AI agents: permissions and limits

@@ -1,0 +1,44 @@
+name: Handle your reply
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: reply-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    # Only open draft issues, and only comments from you or people you added to the repo.
+    if: >-
+      !github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      startsWith(github.event.issue.title, 'Draft post:') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Post it, skip it, or make your changes
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          IG_PAGE_TOKEN: ${{ secrets.IG_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          TEXT_MODEL: ${{ vars.TEXT_MODEL }}
+          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: python handle_comment.py

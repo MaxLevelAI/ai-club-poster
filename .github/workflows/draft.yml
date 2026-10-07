@@ -1,0 +1,44 @@
+name: Make a draft post
+
+on:
+  schedule:
+    # Times are in UTC. These are about 9am, 1pm and 6pm Eastern (an hour earlier in winter).
+    - cron: "7 13 * * *"
+    - cron: "7 17 * * *"
+    - cron: "7 22 * * *"
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Optional: a specific topic for this post"
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency: drafts
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Generate slides and caption
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TOPIC: ${{ github.event.inputs.topic }}
+          TEXT_MODEL: ${{ vars.TEXT_MODEL }}
+          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+        run: python generate.py
+
+      - name: Send it to you for approval
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python make_issue.py
