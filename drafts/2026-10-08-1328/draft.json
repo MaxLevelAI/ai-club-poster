@@ -68,5 +68,6 @@
     "format": "quiz",
     "cover_style": "terminal"
   },
-  "updated": "2026-10-08T13:28:56+00:00"
+  "updated": "2026-10-08T13:28:56+00:00",
+  "issue": 5
 }
