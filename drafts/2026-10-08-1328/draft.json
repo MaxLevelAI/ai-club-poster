@@ -1,7 +1,7 @@
 {
   "id": "2026-10-08-1328",
   "topic": "Meet the agent that runs this Instagram account",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-08T13:28:54+00:00",
   "changes": [],
@@ -69,5 +69,7 @@
     "cover_style": "terminal"
   },
   "updated": "2026-10-08T13:28:56+00:00",
-  "issue": 5
+  "issue": 5,
+  "decided": "2026-10-08T14:02:26+00:00",
+  "permalink": "https://www.instagram.com/p/DePGiWSF6V3/"
 }
