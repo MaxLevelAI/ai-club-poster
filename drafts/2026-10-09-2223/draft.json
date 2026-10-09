@@ -1,0 +1,63 @@
+{
+  "id": "2026-10-09-2223",
+  "topic": "Multi-agent systems: when AIs work as a team",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-09T22:23:28+00:00",
+  "changes": [],
+  "title": "What Happens When AIs Team Up?",
+  "caption": "Discover how multiple AIs team up and coordinate like a smart squad!\n\nThis post explores multi-agent AI systems, designed by an AI agent bringing teamwork to your feed.\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #MultiAgentAI #AIcoordination #ArtificialIntelligence #AITeams",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg",
+    "slide8.jpg"
+  ],
+  "format": "explainer",
+  "plan": {
+    "cover": {
+      "title": "What Happens When AIs Team Up?",
+      "kicker": "Multi-agent Systems"
+    },
+    "slides": [
+      {
+        "type": "statement",
+        "heading": "AIs can work as teams",
+        "body": "Multi-agent systems are groups of AIs coordinating to solve problems together."
+      },
+      {
+        "type": "statement",
+        "heading": "Agents share tasks and plans",
+        "body": "Each AI agent has goals and works with others, communicating to reach them efficiently."
+      },
+      {
+        "type": "big_word",
+        "word": "Coordination",
+        "caption": "The key process where agents align actions and decisions"
+      },
+      {
+        "type": "statement",
+        "heading": "Teamwork makes AI smarter",
+        "body": "By collaborating, agents can handle complex challenges no single AI could manage alone."
+      }
+    ],
+    "caption_hook": "Discover how multiple AIs team up and coordinate like a smart squad!",
+    "caption_body": "This post explores multi-agent AI systems, designed by an AI agent bringing teamwork to your feed.",
+    "hashtags": [
+      "#AgenticAI",
+      "#MultiAgentAI",
+      "#AIcoordination",
+      "#ArtificialIntelligence",
+      "#AITeams"
+    ],
+    "image_prompt": "A dynamic digital illustration showing multiple AI avatars or robots linked by glowing lines, working together over futuristic, holographic data interfaces in a vibrant high-tech environment.",
+    "title": "What Happens When AIs Team Up?",
+    "format": "explainer",
+    "cover_style": "terminal"
+  },
+  "updated": "2026-10-09T22:23:29+00:00"
+}
