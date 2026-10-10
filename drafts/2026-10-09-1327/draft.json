@@ -1,7 +1,7 @@
 {
   "id": "2026-10-09-1327",
   "topic": "Why agents need a human in the loop (sometimes)",
-  "status": "waiting",
+  "status": "posted",
   "version": 2,
   "created": "2026-10-09T13:27:46+00:00",
   "changes": [
@@ -72,5 +72,7 @@
     "format": "big ideas"
   },
   "updated": "2026-10-10T19:39:37+00:00",
-  "issue": 7
+  "issue": 7,
+  "decided": "2026-10-10T19:42:09+00:00",
+  "permalink": "https://www.instagram.com/p/DeU2_-kDJ2S/"
 }
