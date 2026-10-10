@@ -80,5 +80,6 @@
     "format": "terminal log",
     "cover_style": "center"
   },
-  "updated": "2026-10-10T13:21:42+00:00"
+  "updated": "2026-10-10T13:21:42+00:00",
+  "issue": 9
 }
