@@ -1,7 +1,7 @@
 {
   "id": "2026-10-09-2223",
   "topic": "Multi-agent systems: when AIs work as a team",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-09T22:23:28+00:00",
   "changes": [],
@@ -60,5 +60,7 @@
     "cover_style": "terminal"
   },
   "updated": "2026-10-09T22:23:29+00:00",
-  "issue": 8
+  "issue": 8,
+  "decided": "2026-10-10T19:46:58+00:00",
+  "permalink": "https://www.instagram.com/p/DeU3j-4DABa/"
 }
