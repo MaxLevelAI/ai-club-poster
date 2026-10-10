@@ -212,12 +212,44 @@ def _clean_plan(plan):
     return plan
 
 
+# ---- usage + cost tracking (shown on the JARVIS dashboard). Prices are estimates in USD.
+TEXT_PRICE = {"in": 0.40 / 1e6, "out": 1.60 / 1e6}           # gpt-4.1-mini per token
+IMAGE_PRICE = {"low": 0.016, "medium": 0.063, "high": 0.25}   # gpt-image-1, 1024x1536, per image
+USAGE = {"text_calls": 0, "input_tokens": 0, "output_tokens": 0, "images": 0, "cost_usd": 0.0}
+
+
+def _track_text(resp):
+    u = getattr(resp, "usage", None)
+    i = getattr(u, "prompt_tokens", 0) or 0
+    o = getattr(u, "completion_tokens", 0) or 0
+    USAGE["text_calls"] += 1
+    USAGE["input_tokens"] += i
+    USAGE["output_tokens"] += o
+    USAGE["cost_usd"] += i * TEXT_PRICE["in"] + o * TEXT_PRICE["out"]
+
+
+def _track_image():
+    USAGE["images"] += 1
+    USAGE["cost_usd"] += IMAGE_PRICE.get(config.IMAGE_QUALITY, IMAGE_PRICE["high"])
+
+
+def _merge_usage(meta):
+    old = meta.get("usage") or {}
+    merged = {k: round(old.get(k, 0) + v, 6) if isinstance(v, float) else old.get(k, 0) + v
+              for k, v in USAGE.items()}
+    merged["tokens"] = merged["input_tokens"] + merged["output_tokens"]
+    meta["usage"] = merged
+    for k in USAGE:
+        USAGE[k] = 0.0 if k == "cost_usd" else 0
+
+
 def _ask_json(client, prompt):
     resp = client.chat.completions.create(
         model=config.TEXT_MODEL,
         response_format={"type": "json_object"},
         messages=[{"role": "user", "content": prompt}],
     )
+    _track_text(resp)
     return json.loads(resp.choices[0].message.content)
 
 
@@ -248,6 +280,7 @@ def make_background(client, image_prompt):
     resp = client.images.generate(
         model=config.IMAGE_MODEL, prompt=IMAGE_STYLE + image_prompt,
         size="1024x1536", quality=config.IMAGE_QUALITY, n=1)
+    _track_image()
     data = resp.data[0]
     if getattr(data, "b64_json", None):
         raw = base64.b64decode(data.b64_json)
@@ -872,6 +905,7 @@ def save(draft_dir, plan, bg, guest_bg, meta):
         name = f"slide{i}.jpg"
         slide.save(draft_dir / name, "JPEG", quality=93, optimize=True)
         names.append(name)
+    _merge_usage(meta)
     meta.update({"title": plan["title"], "caption": build_caption(plan), "slides": names,
                  "format": plan.get("format", ""), "plan": plan, "updated": now_iso()})
     (draft_dir / "draft.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
@@ -879,30 +913,55 @@ def save(draft_dir, plan, bg, guest_bg, meta):
     return meta
 
 
-def new_draft(demo=False):
-    topic = pick_topic()
-    n = draft_count()
-    fmt = FORMATS[n % len(FORMATS)]
-    style = COVER_STYLES[n % len(COVER_STYLES)]
-    print(f"Topic: {topic} | format: {fmt[0]} | cover: {style}")
-    if demo:
-        plan, bg = json.loads(json.dumps(DEMO_PLAN)), demo_background()
-        guest_bg = guest_background(None)
-        plan = _clean_plan(plan)
-        plan["cover_style"] = os.getenv("COVER", "terminal")
-    else:
+WORK = ROOT / ".work"  # temp files passed between stages inside one GitHub Actions job
+
+
+def new_draft(demo=False, stage="all"):
+    """stage: all | write | art | design. The workflow runs write -> art -> design as separate,
+    named steps so the dashboard can show exactly what the agent is doing."""
+    WORK.mkdir(exist_ok=True)
+    client = None
+    if not demo and stage in ("all", "write", "art"):
         from openai import OpenAI
         client = OpenAI()
-        plan = make_plan(client, topic, fmt)
-        plan["format"], plan["cover_style"] = fmt[0], style
+
+    if stage in ("all", "write"):
+        topic = pick_topic()
+        n = draft_count()
+        fmt = FORMATS[n % len(FORMATS)]
+        style = COVER_STYLES[n % len(COVER_STYLES)]
+        print(f"Topic: {topic} | format: {fmt[0]} | cover: {style}")
+        if demo:
+            plan = _clean_plan(json.loads(json.dumps(DEMO_PLAN)))
+            plan["cover_style"] = os.getenv("COVER", "terminal")
+        else:
+            plan = make_plan(client, topic, fmt)
+            plan["format"], plan["cover_style"] = fmt[0], style
         print(f"Title: {plan['title']}")
-        bg = make_background(client, plan.get("image_prompt") or topic)
-        guest_bg = guest_background(client) if meeting_upcoming() and config.GUEST_LINE else None
-    draft_id = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d-%H%M")
-    meta = {"id": draft_id, "topic": topic, "status": "waiting", "version": 1,
-            "created": now_iso(), "changes": []}
-    save(DRAFTS / draft_id, plan, bg, guest_bg, meta)
-    print(f"Draft saved: {draft_id}")
+        (WORK / "plan.json").write_text(json.dumps({"topic": topic, "plan": plan, "usage": dict(USAGE)}),
+                                        encoding="utf-8")
+
+    work = json.loads((WORK / "plan.json").read_text(encoding="utf-8"))
+    if stage in ("art", "design"):  # each stage runs as a separate process: carry usage forward
+        USAGE.update(work.get("usage", {}))
+
+    if stage in ("all", "art"):
+        bg = demo_background() if demo else make_background(client, work["plan"].get("image_prompt") or work["topic"])
+        bg.save(WORK / "bg.jpg", "JPEG", quality=95)
+        if not demo and meeting_upcoming() and config.GUEST_LINE:
+            guest_background(client)
+        work["usage"] = dict(USAGE)
+        (WORK / "plan.json").write_text(json.dumps(work), encoding="utf-8")
+        print("Artwork ready")
+
+    if stage in ("all", "design"):
+        bg = Image.open(WORK / "bg.jpg").convert("RGB")
+        guest_bg = guest_background(None) if meeting_upcoming() and config.GUEST_LINE else None
+        draft_id = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d-%H%M")
+        meta = {"id": draft_id, "topic": work["topic"], "status": "waiting", "version": 1,
+                "created": now_iso(), "changes": []}
+        save(DRAFTS / draft_id, work["plan"], bg, guest_bg, meta)
+        print(f"Draft saved: {draft_id}")
 
 
 def revise(draft_id, feedback):
@@ -934,4 +993,5 @@ if __name__ == "__main__":
     if "--revise" in sys.argv:
         revise(sys.argv[sys.argv.index("--revise") + 1], os.environ["FEEDBACK"])
     else:
-        new_draft(demo="--demo" in sys.argv)
+        st = sys.argv[sys.argv.index("--stage") + 1] if "--stage" in sys.argv else "all"
+        new_draft(demo="--demo" in sys.argv, stage=st)

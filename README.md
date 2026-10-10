@@ -8,7 +8,8 @@ your phone. You reply:
 - **no**: it throws the draft away
 - **anything else** (like "make slide 2 simpler"): it redoes the post and sends the new version
 
-A live dashboard (on Vercel) shows everything the agent has made.
+JARVIS, a live mission-control dashboard on Vercel, shows the agent working in real time and can
+control it (approve, pause, kill switch, voice). See `jarvis/README.md`.
 
 ## One-time setup
 
@@ -19,8 +20,8 @@ A live dashboard (on Vercel) shows everything the agent has made.
    - `IG_PAGE_TOKEN`: the Page token that never expires
    - `IG_USER_ID`: `17841426927209902`
 3. **Phone alerts:** install the GitHub app, sign in, allow notifications.
-4. **Dashboard:** on vercel.com, Add New, Project, import `ai-club-poster`, Deploy.
-   The settings come from `vercel.json`, so leave everything as is.
+4. **Dashboard:** on vercel.com, Add New, Project, import `ai-club-poster`, set Root Directory
+   to `jarvis`, add the environment variables from `jarvis/README.md`, Deploy.
 5. **First post:** Actions tab, Make a draft post, Run workflow.
 
 After that it runs by itself. You never upload anything again.

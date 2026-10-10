@@ -30,7 +30,7 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Post it, skip it, or make your changes
+      - name: "Acting on your reply"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           IG_PAGE_TOKEN: ${{ secrets.IG_PAGE_TOKEN }}

@@ -29,15 +29,41 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Generate slides and caption
+      - name: "Writing the slides"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TOPIC: ${{ github.event.inputs.topic }}
           TEXT_MODEL: ${{ vars.TEXT_MODEL }}
           IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
-        run: python generate.py
+        run: python generate.py --stage write
 
-      - name: Send it to you for approval
+      - name: "Generating the artwork"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+        run: python generate.py --stage art
+
+      - name: "Designing the slides"
+        run: python generate.py --stage design
+
+      - name: "Sending for approval"
         env:
           GH_TOKEN: ${{ github.token }}
         run: python make_issue.py
+
+      # Only runs if the REQUIRE_APPROVAL repo variable is set to "false" (from the JARVIS dashboard).
+      # By default approval is required and this step is skipped.
+      - name: "Auto-posting (approval not required)"
+        if: ${{ vars.REQUIRE_APPROVAL == 'false' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IG_PAGE_TOKEN: ${{ secrets.IG_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          git pull -q --rebase origin main || true
+          ISSUE_NUMBER=$(python -c "import json;d=json.load(open('drafts/'+open('drafts/LATEST').read().strip()+'/draft.json'));print(d['issue'])")
+          export ISSUE_NUMBER
+          export ISSUE_BODY="$(gh issue view "$ISSUE_NUMBER" --json body -q .body)"
+          export COMMENT_BODY="yes"
+          python handle_comment.py
