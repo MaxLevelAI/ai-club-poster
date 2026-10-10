@@ -20,11 +20,22 @@ first = re.sub(r"[^a-z]", "", comment.lower().split()[0]) if comment else ""
 APPROVE = {"yes", "y", "approve", "approved", "post", "postit", "ship", "lgtm", "ok", "okay"}
 SKIP = {"no", "n", "skip", "reject", "cancel", "delete", "nope"}
 
+# Replies are queued one at a time. If an earlier reply already posted or skipped this draft,
+# stop here so a second "yes" can never post it twice.
+import json
+import subprocess
+subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], cwd=ROOT, check=False)
+live = json.loads(gh("issue", "view", issue, "--json", "state").stdout or "{}")
+if live.get("state", "OPEN").upper() != "OPEN":
+    raise SystemExit("This draft was already handled; ignoring the extra reply.")
+
 m = re.search(r"<!-- draft:(\S+) sha:([0-9a-f]+) -->", os.environ.get("ISSUE_BODY", ""))
 if not m:
     raise SystemExit("Not a draft issue.")
 draft_id, sha = m.groups()
 draft = load_draft(draft_id)
+if draft.get("status") in ("posted", "skipped"):
+    raise SystemExit(f"Draft {draft_id} is already {draft['status']}; ignoring the extra reply.")
 
 
 def reply(text, close=False):
