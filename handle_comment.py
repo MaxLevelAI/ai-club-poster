@@ -27,7 +27,8 @@ import subprocess
 subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], cwd=ROOT, check=False)
 live = json.loads(gh("issue", "view", issue, "--json", "state").stdout or "{}")
 if live.get("state", "OPEN").upper() != "OPEN":
-    raise SystemExit("This draft was already handled; ignoring the extra reply.")
+    print("This draft was already handled; ignoring the extra reply.")
+    raise SystemExit(0)
 
 m = re.search(r"<!-- draft:(\S+) sha:([0-9a-f]+) -->", os.environ.get("ISSUE_BODY", ""))
 if not m:
@@ -35,7 +36,8 @@ if not m:
 draft_id, sha = m.groups()
 draft = load_draft(draft_id)
 if draft.get("status") in ("posted", "skipped"):
-    raise SystemExit(f"Draft {draft_id} is already {draft['status']}; ignoring the extra reply.")
+    print(f"Draft {draft_id} is already {draft['status']}; ignoring the extra reply.")
+    raise SystemExit(0)
 
 
 def reply(text, close=False):
