@@ -6,7 +6,8 @@ const g = globalThis as any;
 const cache: Map<string, { data: any; at: number }> = g.__jarvisIg || (g.__jarvisIg = new Map());
 
 async function get(path: string, params: Record<string, string>, fresh = 60000) {
-  const token = process.env.IG_PAGE_TOKEN;
+  // Tolerate copy-paste accidents: spaces, line breaks, quotes, or "IG_PAGE_TOKEN=" pasted along with it.
+  const token = (process.env.IG_PAGE_TOKEN || "").replace(/^\s*IG_PAGE_TOKEN\s*=\s*/i, "").replace(/[\s"']/g, "");
   if (!token) throw new Error("IG_PAGE_TOKEN is not set");
   const q = new URLSearchParams({ ...params, access_token: token });
   const url = `${GRAPH}${path}?${q}`;
@@ -34,7 +35,7 @@ export type IgPost = {
 };
 
 export async function igSnapshot() {
-  const ig = process.env.IG_USER_ID || "17841426927209902";
+  const ig = (process.env.IG_USER_ID || "17841426927209902").replace(/\D/g, "") || "17841426927209902";
   const out: {
     ok: boolean;
     error?: string;
