@@ -41,7 +41,7 @@ function describe(a: any) {
 export default function Voice({ getKey, needUnlock, runAction, enabled, still }: Props) {
   const [mode, setMode] = useState<"idle" | "listening" | "thinking" | "speaking">("idle");
   const [heard, setHeard] = useState("");
-  const [said, setSaid] = useState("Say “Jarvis, status report” or press the mic.");
+  const [said, setSaid] = useState("Press the mic and talk. Pause 3 seconds (or press it again) when you’re done.");
   const [pending, setPending] = useState<any>(null);
   const [typed, setTyped] = useState("");
   const history = useRef<Msg[]>([]);
@@ -162,19 +162,17 @@ export default function Voice({ getKey, needUnlock, runAction, enabled, still }:
   );
 
   // ---- 1. Ears ----
-  const stopMic = () => {
-    try {
-      rec.current?.stop();
-    } catch {}
-    micSrc.current?.disconnect();
-    micStream.current?.getTracks().forEach((t) => t.stop());
-    micStream.current = null;
-  };
+  // How long you can pause mid-sentence before JARVIS decides you're done talking.
+  const SILENCE_MS = 3000;
+  // If you press the mic and say nothing at all, give up after this long.
+  const NO_SPEECH_MS = 10000;
+  const session = useRef<{ finish: (send: boolean) => void } | null>(null);
+
   const listen = useCallback(async () => {
     if (!getKey()) return needUnlock();
     if (modeRef.current === "listening") {
-      stopMic();
-      setMode("idle");
+      // Pressing the mic again = "I'm done, send it now".
+      session.current?.finish(true);
       return;
     }
     if (modeRef.current === "speaking") {
@@ -190,34 +188,80 @@ export default function Voice({ getKey, needUnlock, runAction, enabled, still }:
     try {
       micStream.current = await navigator.mediaDevices.getUserMedia({ audio: true });
       micSrc.current = ctx.createMediaStreamSource(micStream.current);
-      micSrc.current.connect(analyser.current!); // drawn only; analyser -> speakers is muted by gain below
+      micSrc.current.connect(analyser.current!); // drawn only; analyser -> speakers is muted while listening
     } catch {}
-    const r = new SR();
-    rec.current = r;
-    r.lang = "en-US";
-    r.interimResults = true;
-    r.continuous = false;
-    let final = "";
-    r.onresult = (e: any) => {
-      let interim = "";
-      for (let i = e.resultIndex; i < e.results.length; i++) {
-        const t = e.results[i][0].transcript;
-        if (e.results[i].isFinal) final += t;
-        else interim += t;
-      }
-      setHeard((final + interim).trim());
+
+    let final = ""; // everything said so far, across restarts
+    let interim = "";
+    let done = false;
+    let silence: any = null;
+    let r: any = null;
+
+    const finish = (send: boolean) => {
+      if (done) return;
+      done = true;
+      clearTimeout(silence);
+      session.current = null;
+      try {
+        r?.stop();
+      } catch {}
+      micSrc.current?.disconnect();
+      micStream.current?.getTracks().forEach((t) => t.stop());
+      micStream.current = null;
+      const text = (final + " " + interim).trim();
+      if (send && text) ask(text.replace(/^(hey |ok )?jarvis[,.]?\s*/i, "") || text);
+      else setMode("idle");
     };
-    r.onerror = (e: any) => {
-      if (e.error === "not-allowed") setSaid("Microphone blocked. Allow it in the address bar, then try again.");
+    // Every time we hear something, restart the countdown. Silence for SILENCE_MS = done.
+    const armSilence = (ms: number) => {
+      clearTimeout(silence);
+      silence = setTimeout(() => finish(true), ms);
     };
-    r.onend = () => {
-      stopMic();
-      if (final.trim()) ask(final.replace(/^(hey |ok )?jarvis[,.]?\s*/i, "") || final);
-      else if (modeRef.current === "listening") setMode("idle");
+
+    // Chrome sometimes stops listening on its own during a pause; quietly start it again
+    // until our own silence timer decides you're finished.
+    const startRec = () => {
+      r = new SR();
+      rec.current = r;
+      r.lang = "en-US";
+      r.interimResults = true;
+      r.continuous = true;
+      r.onresult = (e: any) => {
+        interim = "";
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const t = e.results[i][0].transcript;
+          if (e.results[i].isFinal) final += (final ? " " : "") + t.trim();
+          else interim += t;
+        }
+        setHeard((final + " " + interim).trim());
+        armSilence(SILENCE_MS);
+      };
+      r.onerror = (e: any) => {
+        if (e.error === "not-allowed" || e.error === "service-not-allowed") {
+          setSaid("Microphone blocked. Allow it in the address bar, then try again.");
+          finish(false);
+        }
+      };
+      r.onend = () => {
+        if (done) return;
+        if (interim) {
+          final += (final ? " " : "") + interim.trim();
+          interim = "";
+        }
+        try {
+          startRec();
+        } catch {
+          finish(true);
+        }
+      };
+      r.start();
     };
+
+    session.current = { finish };
     setHeard("");
     setMode("listening");
-    r.start();
+    armSilence(NO_SPEECH_MS);
+    startRec();
   }, [ask, audio, getKey, needUnlock]);
 
   // Let the round mic button / spacebar trigger it.
