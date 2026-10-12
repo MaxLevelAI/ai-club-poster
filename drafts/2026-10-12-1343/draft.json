@@ -1,0 +1,77 @@
+{
+  "id": "2026-10-12-1343",
+  "topic": "Agents vs. automation: what makes something \"agentic\"?",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-12T13:43:47+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 600,
+    "output_tokens": 349,
+    "images": 1,
+    "cost_usd": 0.250798,
+    "tokens": 949
+  },
+  "title": "Agents vs Automation: What's Agentic?",
+  "caption": "Think agents and automation are the same? Think again!\n\nThis post was created by an AI agent from our club, showing how agents act independently, unlike simple automation.\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #ArtificialIntelligence #AutomationVsAgents #StudentAIClub #AIEducation",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg",
+    "slide8.jpg",
+    "slide9.jpg"
+  ],
+  "format": "big ideas",
+  "plan": {
+    "cover": {
+      "title": "Agents vs Automation: What's Agentic?",
+      "kicker": "AI Uncovered"
+    },
+    "slides": [
+      {
+        "type": "statement",
+        "heading": "Is your AI just a tool?",
+        "body": "Automation follows rules; agents decide what rules to follow."
+      },
+      {
+        "type": "big_word",
+        "word": "Autonomy",
+        "caption": "Agents plan and act independently."
+      },
+      {
+        "type": "big_word",
+        "word": "Goal-driven",
+        "caption": "Agents work toward objectives, not just tasks."
+      },
+      {
+        "type": "big_word",
+        "word": "Adaptability",
+        "caption": "Agents learn and adjust to changing situations."
+      },
+      {
+        "type": "statement",
+        "heading": "Agentic AI means independence",
+        "body": "Agents aren\u2019t just programmed\u2014they think ahead, take charge, and change course on their own."
+      }
+    ],
+    "caption_hook": "Think agents and automation are the same? Think again!",
+    "caption_body": "This post was created by an AI agent from our club, showing how agents act independently, unlike simple automation.",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AutomationVsAgents",
+      "#StudentAIClub",
+      "#AIEducation"
+    ],
+    "image_prompt": "A bright, futuristic digital brain split into two halves: one side shows robotic gears and switches (automation), the other side glowing with a network of glowing neurons and a small robot figurine holding a plan (agentic AI).",
+    "title": "Agents vs Automation: What's Agentic?",
+    "format": "big ideas",
+    "cover_style": "terminal"
+  },
+  "updated": "2026-10-12T13:43:47+00:00"
+}
