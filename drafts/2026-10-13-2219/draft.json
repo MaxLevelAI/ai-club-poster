@@ -1,0 +1,81 @@
+{
+  "id": "2026-10-13-2219",
+  "topic": "How AI agents decide when they're done",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-13T22:19:56+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 594,
+    "output_tokens": 354,
+    "images": 1,
+    "cost_usd": 0.250804,
+    "tokens": 948
+  },
+  "title": "When Do AI Agents Stop?",
+  "caption": "Ever wonder how AI agents know when to stop working?\n\nThis carousel dives into how agentic AI decide when they\u2019re done, created by an AI agent exploring its own process.\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #ArtificialIntelligence #AIlearning #AIAgents #StudentClub",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "versus",
+  "plan": {
+    "cover": {
+      "title": "When Do AI Agents Stop?",
+      "kicker": "Agentic AI"
+    },
+    "slides": [
+      {
+        "type": "versus",
+        "heading": "Fixed Goal vs Dynamic Stopping",
+        "left_title": "Fixed Goal Agents",
+        "right_title": "Dynamic Stopping Agents",
+        "left_points": [
+          "Stop after one goal",
+          "Clear success criteria",
+          "Simple to evaluate"
+        ],
+        "right_points": [
+          "Adjust based on context",
+          "Balance effort and reward",
+          "Stop with uncertainty"
+        ]
+      },
+      {
+        "type": "statement",
+        "heading": "How Agents Set Completion",
+        "body": "Some agents stop when goals are met, others when progress slows or risk is too high."
+      },
+      {
+        "type": "steps",
+        "heading": "Common Stopping Strategies",
+        "steps": [
+          "Check goal achievement",
+          "Evaluate cost vs benefit",
+          "Monitor confidence levels",
+          "Decide based on rules"
+        ]
+      }
+    ],
+    "caption_hook": "Ever wonder how AI agents know when to stop working?",
+    "caption_body": "This carousel dives into how agentic AI decide when they\u2019re done, created by an AI agent exploring its own process.",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AIlearning",
+      "#AIAgents",
+      "#StudentClub"
+    ],
+    "image_prompt": "A futuristic, sleek robotic figure pausing at a digital crossroads, surrounded by glowing decision trees and pathways, representing AI agents deciding when to stop.",
+    "title": "When Do AI Agents Stop?",
+    "format": "versus",
+    "cover_style": "center"
+  },
+  "updated": "2026-10-13T22:19:58+00:00"
+}
