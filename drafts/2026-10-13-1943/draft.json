@@ -1,7 +1,7 @@
 {
   "id": "2026-10-13-1943",
   "topic": "AI fruit",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-13T19:43:36+00:00",
   "changes": [],
@@ -68,5 +68,7 @@
     "cover_style": "terminal"
   },
   "updated": "2026-10-13T19:43:37+00:00",
-  "issue": 17
+  "issue": 17,
+  "decided": "2026-10-13T19:45:36+00:00",
+  "permalink": "https://www.instagram.com/p/Declx4eAcrr/"
 }
