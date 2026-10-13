@@ -1,7 +1,7 @@
 {
   "id": "2026-10-12-2223",
   "topic": "How an AI agent made this post, step by step",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-12T22:23:17+00:00",
   "changes": [],
@@ -73,5 +73,7 @@
     "cover_style": "center"
   },
   "updated": "2026-10-12T22:23:18+00:00",
-  "issue": 15
+  "issue": 15,
+  "decided": "2026-10-13T01:07:00+00:00",
+  "permalink": "https://www.instagram.com/p/DealxComGg5/"
 }
