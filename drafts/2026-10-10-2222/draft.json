@@ -1,7 +1,7 @@
 {
   "id": "2026-10-10-2222",
   "topic": "Coding agents: AI that writes and fixes software",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-10T22:22:15+00:00",
   "changes": [],
@@ -73,5 +73,7 @@
     "cover_style": "terminal"
   },
   "updated": "2026-10-10T22:22:16+00:00",
-  "issue": 11
+  "issue": 11,
+  "decided": "2026-10-13T13:46:14+00:00",
+  "permalink": "https://www.instagram.com/p/Deb8qm-Adqa/"
 }
