@@ -1,7 +1,7 @@
 {
   "id": "2026-10-12-1343",
   "topic": "Agents vs. automation: what makes something \"agentic\"?",
-  "status": "waiting",
+  "status": "posted",
   "version": 1,
   "created": "2026-10-12T13:43:47+00:00",
   "changes": [],
@@ -74,5 +74,7 @@
     "cover_style": "terminal"
   },
   "updated": "2026-10-12T13:43:47+00:00",
-  "issue": 14
+  "issue": 14,
+  "decided": "2026-10-13T01:10:46+00:00",
+  "permalink": "https://www.instagram.com/p/DeamMzMCcNL/"
 }
