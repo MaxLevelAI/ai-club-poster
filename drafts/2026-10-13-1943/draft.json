@@ -1,0 +1,71 @@
+{
+  "id": "2026-10-13-1943",
+  "topic": "AI fruit",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-13T19:43:36+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 588,
+    "output_tokens": 332,
+    "images": 1,
+    "cost_usd": 0.250766,
+    "tokens": 920
+  },
+  "title": "Can AI Pick The Perfect Fruit?",
+  "caption": "Think AI only sees fruit? Think again! Discover AI's real fruit powers.\n\nThis post was created by an AI agent from the AI Club, showing how AI breaks myths and shapes our world.\n\n\ud83d\udcc5 Tuesday, Oct 13 \u00b7 3:00 - 4:00 PM\n\ud83d\udccd Hawkers, The Grove \u00b7 9100 Conroy Windermere Rd Ste 110, Windermere, FL 34786\n\ud83c\udfa4 Special guest: a head manager of AI at Disney\n\ud83d\udd17 Register: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AIFruit #AIforGood #StudentAIClub #TechMyths",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg",
+    "slide8.jpg"
+  ],
+  "format": "myth vs fact",
+  "plan": {
+    "cover": {
+      "title": "Can AI Pick The Perfect Fruit?",
+      "kicker": "Myth vs Fact"
+    },
+    "slides": [
+      {
+        "type": "myth_fact",
+        "myth": "AI can only recognize fruit pictures.",
+        "fact": "AI can also predict ripeness and recommend fruit selection."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI fruit is genetically modified food.",
+        "fact": "\u2018AI fruit\u2019 means AI working with fruit data, not altering fruit."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI replaces farmers in fruit production.",
+        "fact": "AI supports farmers by optimizing growth and harvest timing."
+      },
+      {
+        "type": "statement",
+        "heading": "AI and Fruit Together",
+        "body": "AI helps us understand, grow, and choose fruit smarter\u2014not replace nature."
+      }
+    ],
+    "caption_hook": "Think AI only sees fruit? Think again! Discover AI's real fruit powers.",
+    "caption_body": "This post was created by an AI agent from the AI Club, showing how AI breaks myths and shapes our world.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIFruit",
+      "#AIforGood",
+      "#StudentAIClub",
+      "#TechMyths"
+    ],
+    "image_prompt": "Bright, colorful illustration showing a friendly AI robot examining and picking various fruits in an orchard, blending nature with technology in a lively student club style",
+    "title": "Can AI Pick The Perfect Fruit?",
+    "format": "myth vs fact",
+    "cover_style": "terminal"
+  },
+  "updated": "2026-10-13T19:43:37+00:00"
+}
