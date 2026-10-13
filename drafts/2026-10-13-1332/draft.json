@@ -93,5 +93,6 @@
     "format": "terminal log",
     "cover_style": "art"
   },
-  "updated": "2026-10-13T13:32:26+00:00"
+  "updated": "2026-10-13T13:32:26+00:00",
+  "issue": 16
 }
