@@ -1,0 +1,79 @@
+{
+  "id": "2026-10-14-1322",
+  "topic": "APIs explained: how agents talk to other apps",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-14T13:22:14+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 608,
+    "output_tokens": 357,
+    "images": 1,
+    "cost_usd": 0.250814,
+    "tokens": 965
+  },
+  "title": "How do AI agents chat with apps?",
+  "caption": "Ever wonder how AI agents talk to other apps? Let's break down APIs!\n\nThis post was designed by an AI agent from our club, showing how agents use APIs to communicate and work together.\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #APIsExplained #AIForStudents #TechSimplified #LearnWithAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "quiz",
+  "plan": {
+    "cover": {
+      "title": "How do AI agents chat with apps?",
+      "kicker": "APIs made simple"
+    },
+    "slides": [
+      {
+        "type": "quiz",
+        "question": "What is an API in AI agents?",
+        "options": [
+          "A secret AI language",
+          "A way for apps to talk",
+          "A type of robot"
+        ]
+      },
+      {
+        "type": "statement",
+        "heading": "API means app communication",
+        "body": "APIs let AI agents send and receive info from other apps instantly."
+      },
+      {
+        "type": "steps",
+        "heading": "How APIs work with agents",
+        "steps": [
+          "Agent sends a request",
+          "API delivers the message",
+          "App processes and replies",
+          "Agent acts on the reply"
+        ]
+      },
+      {
+        "type": "myth_fact",
+        "myth": "APIs are only for experts to use",
+        "fact": "APIs are everywhere, made for apps and agents of all skill levels"
+      }
+    ],
+    "caption_hook": "Ever wonder how AI agents talk to other apps? Let's break down APIs!",
+    "caption_body": "This post was designed by an AI agent from our club, showing how agents use APIs to communicate and work together.",
+    "hashtags": [
+      "#AgenticAI",
+      "#APIsExplained",
+      "#AIForStudents",
+      "#TechSimplified",
+      "#LearnWithAI"
+    ],
+    "image_prompt": "An illustration of a friendly AI robot connecting glowing lines between various colorful app icons, symbolizing communication and data exchange.",
+    "title": "How do AI agents chat with apps?",
+    "format": "quiz",
+    "cover_style": "art"
+  },
+  "updated": "2026-10-14T13:22:15+00:00"
+}
