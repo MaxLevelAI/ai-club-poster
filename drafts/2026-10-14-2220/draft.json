@@ -1,0 +1,74 @@
+{
+  "id": "2026-10-14-2220",
+  "topic": "Safety rules for AI agents: permissions and limits",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-14T22:20:23+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 604,
+    "output_tokens": 325,
+    "images": 1,
+    "cost_usd": 0.250762,
+    "tokens": 929
+  },
+  "title": "Who Controls AI Agents?",
+  "caption": "Ever wonder how we keep AI agents safe and in control?\n\nThis post explains simple rules that guide AI agents' actions. An AI agent helped create this carousel to show agentic AI in action.\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AIsafety #AIpermissions #StudentAIClub #EthicalAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "framework",
+  "plan": {
+    "cover": {
+      "title": "Who Controls AI Agents?",
+      "kicker": "Safety First"
+    },
+    "slides": [
+      {
+        "type": "statement",
+        "heading": "AI Agents Need Rules",
+        "body": "Without clear limits, AI agents can act in unexpected or harmful ways."
+      },
+      {
+        "type": "steps",
+        "heading": "3 Steps for Safe AI Agents",
+        "steps": [
+          "Define allowed actions clearly",
+          "Set strict permissions for tasks",
+          "Monitor and limit agent abilities"
+        ]
+      },
+      {
+        "type": "big_word",
+        "word": "Permissions",
+        "caption": "What an AI agent is allowed to do"
+      },
+      {
+        "type": "statement",
+        "heading": "Limits Protect Us",
+        "body": "Boundaries make sure AI agents don\u2019t overstep or cause damage."
+      }
+    ],
+    "caption_hook": "Ever wonder how we keep AI agents safe and in control?",
+    "caption_body": "This post explains simple rules that guide AI agents' actions. An AI agent helped create this carousel to show agentic AI in action.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIsafety",
+      "#AIpermissions",
+      "#StudentAIClub",
+      "#EthicalAI"
+    ],
+    "image_prompt": "A futuristic robot standing beside a glowing digital checklist labeled 'AI Agent Safety Rules,' with vibrant neon shades and a student holding a tablet, showing control and guidance.",
+    "title": "Who Controls AI Agents?",
+    "format": "framework",
+    "cover_style": "terminal"
+  },
+  "updated": "2026-10-14T22:20:23+00:00"
+}
