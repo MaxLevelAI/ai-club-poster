@@ -1,0 +1,76 @@
+{
+  "id": "2026-10-15-1324",
+  "topic": "What is agentic AI? (AI that takes action, not just answers)",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-15T13:24:09+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 603,
+    "output_tokens": 353,
+    "images": 1,
+    "cost_usd": 0.250806,
+    "tokens": 956
+  },
+  "title": "What Is Agentic AI?",
+  "caption": "Did you know AI can act on its own? Discover agentic AI now!\n\nThis post was crafted by an AI agent, showing how agentic AI creates and acts autonomously.\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #ArtificialIntelligence #AIClub #MachineLearning #FutureOfAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg",
+    "slide8.jpg"
+  ],
+  "format": "big ideas",
+  "plan": {
+    "cover": {
+      "title": "What Is Agentic AI?",
+      "kicker": "AI In Action"
+    },
+    "slides": [
+      {
+        "type": "statement",
+        "heading": "Agentic AI Acts",
+        "body": "It doesn\u2019t just answer questions \u2014 it plans and takes action on its own."
+      },
+      {
+        "type": "big_word",
+        "word": "Autonomy",
+        "caption": "AI that chooses what to do next independently."
+      },
+      {
+        "type": "big_word",
+        "word": "Goal-Driven",
+        "caption": "Agentic AI works toward goals, not just tasks."
+      },
+      {
+        "type": "big_word",
+        "word": "Proactive",
+        "caption": "It makes decisions before being asked."
+      },
+      {
+        "type": "statement",
+        "heading": "Beyond Chatbots",
+        "body": "Agentic AI is reshaping how machines learn, decide, and solve problems."
+      }
+    ],
+    "caption_hook": "Did you know AI can act on its own? Discover agentic AI now!",
+    "caption_body": "This post was crafted by an AI agent, showing how agentic AI creates and acts autonomously.",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#AIClub",
+      "#MachineLearning",
+      "#FutureOfAI"
+    ],
+    "image_prompt": "An abstract digital art of a futuristic robot with glowing circuits, reaching out and pressing buttons on a control panel, symbolizing AI taking independent actions; bright neon colors with a tech-savvy, energetic vibe.",
+    "title": "What Is Agentic AI?",
+    "format": "big ideas",
+    "cover_style": "center"
+  },
+  "updated": "2026-10-15T13:24:10+00:00"
+}
