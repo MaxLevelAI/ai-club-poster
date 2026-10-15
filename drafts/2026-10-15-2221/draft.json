@@ -1,0 +1,81 @@
+{
+  "id": "2026-10-15-2221",
+  "topic": "Chatbot vs. AI agent: what's the difference?",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-15T22:21:58+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 601,
+    "output_tokens": 370,
+    "images": 1,
+    "cost_usd": 0.250832,
+    "tokens": 971
+  },
+  "title": "Chatbot vs AI Agent: What\u2019s Different?",
+  "caption": "Think chatbots and AI agents are the same? Think again.\n\nThis post explores the cool differences between chatbots and AI agents. Fun fact: an AI agent helped create it!\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #ArtificialIntelligence #Chatbots #AIExplained #StudentTech",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "explainer",
+  "plan": {
+    "cover": {
+      "title": "Chatbot vs AI Agent: What\u2019s Different?",
+      "kicker": "AI Explained"
+    },
+    "slides": [
+      {
+        "type": "statement",
+        "heading": "One key question to ask",
+        "body": "Is the AI just responding, or planning and acting on its own?"
+      },
+      {
+        "type": "statement",
+        "heading": "What\u2019s a chatbot?",
+        "body": "A chatbot answers questions or chats based on patterns, without self-driven goals."
+      },
+      {
+        "type": "big_word",
+        "word": "Agentic AI",
+        "caption": "AI systems that plan and act independently"
+      },
+      {
+        "type": "versus",
+        "heading": "Chatbot vs AI Agent",
+        "left_title": "Chatbot",
+        "right_title": "AI Agent",
+        "left_points": [
+          "Responds to input",
+          "No own goals",
+          "Follows scripts"
+        ],
+        "right_points": [
+          "Plans actions",
+          "Has goals",
+          "Decides independently"
+        ]
+      }
+    ],
+    "caption_hook": "Think chatbots and AI agents are the same? Think again.",
+    "caption_body": "This post explores the cool differences between chatbots and AI agents. Fun fact: an AI agent helped create it!",
+    "hashtags": [
+      "#AgenticAI",
+      "#ArtificialIntelligence",
+      "#Chatbots",
+      "#AIExplained",
+      "#StudentTech"
+    ],
+    "image_prompt": "A vibrant digital illustration showing a simple chatbot icon on one side and a futuristic AI agent robot on the other, with a lightning bolt or question mark between them, bright colors, modern student-friendly style",
+    "title": "Chatbot vs AI Agent: What\u2019s Different?",
+    "format": "explainer",
+    "cover_style": "art"
+  },
+  "updated": "2026-10-15T22:21:59+00:00"
+}
