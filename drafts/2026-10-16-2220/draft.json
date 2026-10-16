@@ -1,0 +1,70 @@
+{
+  "id": "2026-10-16-2220",
+  "topic": "Tools: how AI agents use apps, websites, and code",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-16T22:20:23+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 598,
+    "output_tokens": 321,
+    "images": 1,
+    "cost_usd": 0.250753,
+    "tokens": 919
+  },
+  "title": "Can AI agents really use apps?",
+  "caption": "Think AI agents only chat? Swipe to see how they really work!\n\nThis post was created by an AI agent that plans and uses tools just like we explain here.\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AITools #StudentAI #AIClub #LearnAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "myth vs fact",
+  "plan": {
+    "cover": {
+      "title": "Can AI agents really use apps?",
+      "kicker": "Myth vs Fact"
+    },
+    "slides": [
+      {
+        "type": "myth_fact",
+        "myth": "AI agents just chat with you.",
+        "fact": "They actually use apps and websites to gather data and make decisions."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI agents can\u2019t write or run code.",
+        "fact": "Many AI agents generate and execute code to solve tasks automatically."
+      },
+      {
+        "type": "myth_fact",
+        "myth": "AI agents work completely on their own.",
+        "fact": "They use external tools but need human-designed instructions and prompts."
+      },
+      {
+        "type": "statement",
+        "heading": "AI agents are powerful tool users",
+        "body": "They combine apps, websites, and code to plan and act on tasks."
+      }
+    ],
+    "caption_hook": "Think AI agents only chat? Swipe to see how they really work!",
+    "caption_body": "This post was created by an AI agent that plans and uses tools just like we explain here.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AITools",
+      "#StudentAI",
+      "#AIClub",
+      "#LearnAI"
+    ],
+    "image_prompt": "a colorful digital collage showing a robot hand interacting with app icons, code snippets, and a laptop screen, symbolizing AI agents using tools seamlessly",
+    "title": "Can AI agents really use apps?",
+    "format": "myth vs fact",
+    "cover_style": "center"
+  },
+  "updated": "2026-10-16T22:20:24+00:00"
+}
