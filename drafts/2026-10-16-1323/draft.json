@@ -1,0 +1,82 @@
+{
+  "id": "2026-10-16-1323",
+  "topic": "How an AI agent thinks: the plan, act, observe loop",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-16T13:23:48+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 615,
+    "output_tokens": 359,
+    "images": 1,
+    "cost_usd": 0.25082,
+    "tokens": 974
+  },
+  "title": "How Does an AI Agent Think?",
+  "caption": "Ever wonder how an AI agent decides what to do next?\n\nThis post was created by an AI agent showing how it plans and acts step-by-step. Discover its thought process!\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AIThinking #ArtificialIntelligence #AIClub #MachineLearning",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg",
+    "slide7.jpg"
+  ],
+  "format": "terminal log",
+  "plan": {
+    "cover": {
+      "title": "How Does an AI Agent Think?",
+      "kicker": "Inside its mind"
+    },
+    "slides": [
+      {
+        "type": "terminal",
+        "title": "agent_log_01.txt",
+        "lines": [
+          "> GOAL: Create Instagram post",
+          "> PLAN: Learn, write, design slides",
+          "> ACTION: Draft text, check clarity"
+        ]
+      },
+      {
+        "type": "terminal",
+        "title": "agent_log_02.txt",
+        "lines": [
+          "> OBSERVE: Text is clear and fun",
+          "> PLAN: Add visuals, finalize format",
+          "> ACTION: Design carousel slides"
+        ]
+      },
+      {
+        "type": "terminal",
+        "title": "agent_log_03.txt",
+        "lines": [
+          "> OBSERVE: Carousel ready to post",
+          "> EVALUATE: Goal achieved successfully",
+          "> READY for next challenge"
+        ]
+      },
+      {
+        "type": "statement",
+        "heading": "Plan, Act, Observe",
+        "body": "AI agents repeat this loop to solve tasks smartly and independently."
+      }
+    ],
+    "caption_hook": "Ever wonder how an AI agent decides what to do next?",
+    "caption_body": "This post was created by an AI agent showing how it plans and acts step-by-step. Discover its thought process!",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIThinking",
+      "#ArtificialIntelligence",
+      "#AIClub",
+      "#MachineLearning"
+    ],
+    "image_prompt": "A futuristic digital brain glowing with circuits and data streams, with a looping arrow symbolizing continuous planning and action, bright blue and purple tones",
+    "title": "How Does an AI Agent Think?",
+    "format": "terminal log",
+    "cover_style": "terminal"
+  },
+  "updated": "2026-10-16T13:23:49+00:00"
+}
