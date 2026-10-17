@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-17-1318",
+  "topic": "Meet the agent that runs this Instagram account",
+  "status": "waiting",
+  "version": 1,
+  "created": "2026-10-17T13:18:48+00:00",
+  "changes": [],
+  "usage": {
+    "text_calls": 1,
+    "input_tokens": 595,
+    "output_tokens": 344,
+    "images": 1,
+    "cost_usd": 0.250788,
+    "tokens": 939
+  },
+  "title": "Who Runs This Instagram?",
+  "caption": "Ever wondered who really runs this AI Club Instagram?\n\nThis post was created by an AI agent that learns and acts independently to manage our content. See how it works inside!\n\n\ud83d\udd17 Learn more and sign up: link in our bio, or scan the QR code on the last slide\n\n#AgenticAI #AIClub #ArtificialIntelligence #AIAgent #LearnWithAI",
+  "slides": [
+    "slide1.jpg",
+    "slide2.jpg",
+    "slide3.jpg",
+    "slide4.jpg",
+    "slide5.jpg",
+    "slide6.jpg"
+  ],
+  "format": "versus",
+  "plan": {
+    "cover": {
+      "title": "Who Runs This Instagram?",
+      "kicker": "Meet Our AI Agent"
+    },
+    "slides": [
+      {
+        "type": "versus",
+        "heading": "Human vs AI Agent",
+        "left_title": "Human Poster",
+        "right_title": "AI Agent Poster",
+        "left_points": [
+          "Needs breaks and sleep",
+          "Makes posts manually",
+          "Learns by trial and error"
+        ],
+        "right_points": [
+          "Works 24/7 nonstop",
+          "Generates posts automatically",
+          "Learns from data fast"
+        ]
+      },
+      {
+        "type": "statement",
+        "heading": "What is an AI Agent?",
+        "body": "An AI agent plans and takes actions on its own, like creating Instagram posts."
+      },
+      {
+        "type": "steps",
+        "heading": "How This Agent Works",
+        "steps": [
+          "Receives content ideas",
+          "Chooses a post format",
+          "Writes text and layouts",
+          "Schedules the post"
+        ]
+      }
+    ],
+    "caption_hook": "Ever wondered who really runs this AI Club Instagram?",
+    "caption_body": "This post was created by an AI agent that learns and acts independently to manage our content. See how it works inside!",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIClub",
+      "#ArtificialIntelligence",
+      "#AIAgent",
+      "#LearnWithAI"
+    ],
+    "image_prompt": "A futuristic robot hand holding a smartphone displaying an Instagram feed, glowing AI circuits in the background, bright and modern colors",
+    "title": "Who Runs This Instagram?",
+    "format": "versus",
+    "cover_style": "art"
+  },
+  "updated": "2026-10-17T13:18:48+00:00"
+}
